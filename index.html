@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Entradas TeMul</title>
+</head>
+
+<body>
+
+<h1>Entradas para el evento</h1>
+
+<button onclick="generarEntrada()">Generar entrada</button>
+
+<p id="entrada"></p>
+
+<script>
+function generarEntrada() {
+let id = Math.floor(Math.random()*100000);
+document.getElementById("entrada").innerHTML =
+"Tu número de entrada es: " + id;
+}
+</script>
+
+</body>
+</html>
