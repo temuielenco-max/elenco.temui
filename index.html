@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Entradas TeMul</title>
+<title>Entradas Revoltosos</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
-<body>
+<body style="text-align:center;font-family:Arial">
 
-<h1>Entradas para el evento</h1>
+<h1>Entradas Revoltosos</h1>
+<p>Después de hacer la transferencia generá tu entrada</p>
 
-<button onclick="generarEntrada()">Generar entrada</button>
+<button onclick="generarEntrada()">Generar Entrada</button>
 
-<p id="entrada"></p>
+<h2>Tu QR:</h2>
+<div id="qrcode"></div>
 
 <script>
-function generarEntrada() {
-let id = Math.floor(Math.random()*100000);
-document.getElementById("entrada").innerHTML =
-"Tu número de entrada es: " + id;
+
+function generarEntrada(){
+
+let codigo = "ENTRADA-" + Math.floor(Math.random()*1000000000)
+
+document.getElementById("qrcode").innerHTML=""
+
+new QRCode(document.getElementById("qrcode"), {
+text: codigo,
+width:200,
+height:200
+})
+
 }
+
 </script>
 
 </body>
